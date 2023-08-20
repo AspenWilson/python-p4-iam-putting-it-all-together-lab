@@ -26,6 +26,9 @@ function LoginForm({ onLogin }) {
     });
   }
 
+  // const all_errors = <Error key={errors}>{errors}</Error>
+
+
   return (
     <form onSubmit={handleSubmit}>
       <FormField>
@@ -54,9 +57,7 @@ function LoginForm({ onLogin }) {
         </Button>
       </FormField>
       <FormField>
-        {errors.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))}
+        {errors? <Error>{errors}</Error> : null}
       </FormField>
     </form>
   );
